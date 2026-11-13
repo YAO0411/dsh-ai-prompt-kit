@@ -1,0 +1,54 @@
+{
+  "name": "ai-prompt-kit",
+  "version": "1.0.0",
+  "description": "Prompt workshop for DeepSeek Harness: turn a one-line brief into copy-ready bilingual image/video/storyboard prompts, with a local rule library, sample memory, self-check and version discipline.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./check": "./lib/check.js",
+    "./card": "./lib/card.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "seed",
+    "scripts",
+    "locale",
+    "docs",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/check.test.js tests/integration.test.js",
+    "init": "node scripts/init-library.mjs",
+    "check:syntax": "node --check index.js",
+    "test:unit": "node --test tests/check.test.js",
+    "test:integration": "node --test tests/integration.test.js"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "prompt-engineering",
+    "image-prompt",
+    "video-prompt",
+    "storyboard",
+    "ai-prompt"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
